@@ -30,22 +30,10 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
                 .disable();
         http
                 .authorizeRequests()
-                .antMatchers("/api/v1/**")
-                .authenticated()
-                .anyRequest()
-                .permitAll()
-                .and()
-                .authorizeRequests()
                 .antMatchers("/api/v1/employees/**")
                 .authenticated()
                 .anyRequest()
-                .hasRole("USER")
-                .and()
-                .authorizeRequests()
-                .antMatchers("/api/v1/admin/**")
-                .authenticated()
-                .anyRequest()
-                .hasAnyRole("USER","ADMIN")
+                .permitAll()
                 .and()
                 .httpBasic();
 

@@ -12,10 +12,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private int id;
+    private int userId;
 
     @Column(name="username")
-    private String name;
+    private String userName;
 
     @Column(name="email")
     private String emailAddress;
@@ -25,7 +25,7 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",
-            joinColumns= @JoinColumn(name="id"),
+            joinColumns= @JoinColumn(name="userId"),
             inverseJoinColumns = @JoinColumn(name = "roleId" ))
     private Set<Role> roles;
 

@@ -10,13 +10,9 @@ public class BCryptPasswordGenerator {
         String encoded2 = bCryptPasswordEncoder.encode(password);
         String encoded3 = bCryptPasswordEncoder.encode(password);
 
-        System.out.println(encoded1);
-        System.out.println(encoded2);
-        System.out.println(encoded3);
 
-        System.out.println(bCryptPasswordEncoder.matches("welcome", encoded1));
-        System.out.println(bCryptPasswordEncoder.matches("welcome", encoded2));
-        System.out.println(bCryptPasswordEncoder.matches("welcome", encoded3));
+        System.out.println(bCryptPasswordEncoder.matches("welcome", "$2a$10$ych5K0zoq1oPChu0QUOL8.TWTpFI/Msm9d.Krz630kBlr/L0QOArW"));
+        System.out.println(bCryptPasswordEncoder.matches("testing", "$2a$10$ych5K0zoq1oPChu0QUOL8.TWTpFI/Msm9d.Krz630kBlr/L0QOArW"));
 
     }
 }
