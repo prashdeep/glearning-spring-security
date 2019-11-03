@@ -62,7 +62,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
 
         authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
+                .passwordEncoder(NoOpPasswordEncoder.getInstance());
 
 
     }
